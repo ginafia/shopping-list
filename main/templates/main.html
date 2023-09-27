@@ -3,10 +3,15 @@
 {% block content %}
     <nav class="navbar bg-body-tertiary">
         <div class="container-fluid">
-        <!-- <a class="navbar-brand" href="#">
-            <img src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-            Bootstrap
-        </a> -->
+        <a class="navbar-brand" href="#">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGUtUq8CTycbzDRU9n4ukDc67KEhVpv9wr4LXxDJb70zMtvYqpxAIoRJTDfy_blzcXyQU&usqp=CAU", height="50", width="50">
+            Gina Afia
+        </a>
+        <a href="{% url 'main:logout' %}">
+            <button style="background-color: #A07300; color: #fff; padding: 5px 15px; border: none; border-radius: 5px;">
+                Logout
+            </button>
+        </a>
         </div>
     </nav>
     <h1>Shopping List Page</h1>
@@ -35,12 +40,12 @@
                 <td>{{product.date_added}}</td>
                 <td>
                     <a href="{% url 'main:edit_product' product.pk %}">
-                        <button>
+                        <button style="background-color: #A07300; color: #fff; padding: 5px 15px; border: none; border-radius: 5px;">
                             Edit
                         </button>
                     </a>
                     <a href="{% url 'main:delete_product' product.pk %}">
-                        <button>
+                        <button style="background-color: #A07300; color: #fff; padding: 5px 15px; border: none; border-radius: 5px;">
                             Delete
                         </button>
                     </a>
@@ -52,15 +57,10 @@
     <br />
 
     <a href="{% url 'main:create_product' %}">
-        <button>
+        <button style="background-color: #A07300; color: #fff; padding: 5px 15px; border: none; border-radius: 5px;">
             Add New Product
         </button>
     </a>
-    <a href="{% url 'main:logout' %}">
-        <button>
-            Logout
-        </button>
-    </a>
-    <h5>Sesi terakhir login: {{ last_login }}</h5>
+    <h6>Sesi terakhir login: {{ last_login }}</h6>
 
 {% endblock content %}
